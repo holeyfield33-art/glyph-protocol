@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Glyph Protocol Demo</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Glyph Protocol V1.1.1</h1>
+        <div id="session">
+            <button id="newSession">New Session</button>
+            <span id="sessionId"></span>
+        </div>
+        <hr>
+        <div id="stageArea">
+            <h3>Stage User Text (slot 0..7)</h3>
+            <input type="number" id="slotInput" value="0" min="0" max="7">
+            <textarea id="textInput" placeholder="Enter text to stage..." rows="3" cols="40"></textarea>
+            <button id="stageBtn">Stage</button>
+            <pre id="stageResult"></pre>
+        </div>
+        <hr>
+        <div id="proposeArea">
+            <h3>Propose Glyph Sequence</h3>
+            <p>Example: [10, 3, 0] for DISPLAY_SLOT slot 3</p>
+            <input type="text" id="seqInput" placeholder="[10, 3, 0]" size="30">
+            <button id="proposeBtn">Propose</button>
+            <pre id="proposeResult"></pre>
+        </div>
+        <hr>
+        <div id="approvalArea">
+            <h3>Pending Approval</h3>
+            <p id="approvalInfo">No pending approval.</p>
+            <button id="approveBtn" disabled>Approve</button>
+            <button id="denyBtn" disabled>Deny</button>
+        </div>
+        <hr>
+        <div id="draftsArea">
+            <h3>Saved Drafts</h3>
+            <button id="refreshDrafts">Refresh</button>
+            <ul id="draftsList"></ul>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>
